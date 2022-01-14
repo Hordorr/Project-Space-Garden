@@ -1098,54 +1098,6 @@
             ]
         },
         {
-            "name": "Custom",
-            "id": "05818473-f52b-4ec0-80c9-0412d5b13e0d",
-            "actions": [
-                {
-                    "name": "Toggle",
-                    "type": "Button",
-                    "id": "f240203e-fab5-4a88-a028-98e1e77afbde",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Color",
-                    "type": "Value",
-                    "id": "0089914b-6922-46ac-af7a-79d3d365cad3",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "7789b875-cc20-4be4-96d3-648e49a31b76",
-                    "path": "<XRController>{LeftHand}/gripPressed",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Toggle",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a17a51e8-4608-43a2-b030-25697946d3b4",
-                    "path": "<XRController>{LeftHand}/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Color",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
             "name": "ShipControls",
             "id": "9781d3f5-3db6-4010-b105-fcaa566b47fa",
             "actions": [
@@ -1180,6 +1132,24 @@
                     "name": "MoveDown",
                     "type": "Button",
                     "id": "d6916a69-5ea0-478a-aebd-90f24aa89481",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RotationByHand",
+                    "type": "Value",
+                    "id": "9260a9b0-5196-4fb8-817a-1cb279b70c46",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ActivateRotationByHand",
+                    "type": "Button",
+                    "id": "52d4b478-a53c-4fcc-8ca8-c4223409db6c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -1228,6 +1198,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "MoveDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "34a850a9-82c8-4958-acc8-ab26bbb69df9",
+                    "path": "<XRController>{RightHand}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotationByHand",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1fd38cbf-9a1e-44aa-a637-17548a6a86a8",
+                    "path": "<XRController>{RightHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActivateRotationByHand",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
