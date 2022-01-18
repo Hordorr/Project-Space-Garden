@@ -1138,22 +1138,40 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "RotationByHand",
+                    "name": "LeftHandPostition",
                     "type": "Value",
-                    "id": "9260a9b0-5196-4fb8-817a-1cb279b70c46",
+                    "id": "c19a8ff2-f4f4-40a6-9f59-fbd4adca9647",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RigthHandPosition",
+                    "type": "Value",
+                    "id": "b7ce70a1-992b-4911-814b-fdc9595a50ae",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "LeftHandRotation",
+                    "type": "Value",
+                    "id": "ed4e1bdc-f8ef-4a3f-b188-fefe9fbfb15f",
                     "expectedControlType": "Quaternion",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "ActivateRotationByHand",
-                    "type": "Button",
-                    "id": "52d4b478-a53c-4fcc-8ca8-c4223409db6c",
-                    "expectedControlType": "Button",
+                    "name": "RightHandRotation",
+                    "type": "Value",
+                    "id": "785d45ee-ddb7-4916-81f6-607ac1f7e188",
+                    "expectedControlType": "Quaternion",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -1203,23 +1221,45 @@
                 },
                 {
                     "name": "",
-                    "id": "34a850a9-82c8-4958-acc8-ab26bbb69df9",
-                    "path": "<XRController>{RightHand}/deviceRotation",
+                    "id": "e7830d59-01b0-4a8d-a4d6-ad908f342baf",
+                    "path": "<XRController>{LeftHand}/devicePosition",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RotationByHand",
+                    "action": "LeftHandPostition",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "1fd38cbf-9a1e-44aa-a637-17548a6a86a8",
-                    "path": "<XRController>{RightHand}/gripPressed",
+                    "id": "4edf3d4e-6b28-4cb1-ae1f-661ef20d9bef",
+                    "path": "<XRController>{RightHand}/devicePosition",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ActivateRotationByHand",
+                    "action": "RigthHandPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b7353091-6c29-4286-ad22-9589edbf0020",
+                    "path": "<XRController>{LeftHand}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftHandRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "196e5b18-aeab-424e-b8e4-071301a05402",
+                    "path": "<XRController>{RightHand}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightHandRotation",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

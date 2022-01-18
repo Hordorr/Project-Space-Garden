@@ -13,8 +13,8 @@ public class ShipMovement : MonoBehaviour
     public InputActionReference MoveUpRef=null;
     public InputActionReference MoveDownRef=null;
     public InputActionReference Rotationref=null;
-    public InputActionReference RotationByHandref=null;
-    public InputActionReference activateRotationByHandRef=null;
+    
+    
     private Transform ShipTransform=null;
     private Rigidbody shipRigidBody=null;
     private Quaternion baseHandRotationOnActivation;
@@ -45,8 +45,8 @@ public class ShipMovement : MonoBehaviour
         // ShipTransform.Translate(new Vector3(-horizontalValue.y, verticalValue , horizontalValue.x) * Time.deltaTime * MovementSpeed);
         
         if (shipRigidBody.velocity.magnitude < maxVelocity){
-        shipRigidBody.AddForce(ShipTransform.right* -horizontalValue.y *Time.deltaTime*MovementSpeed);
-        shipRigidBody.AddForce(ShipTransform.forward* horizontalValue.x * Time.deltaTime*MovementSpeed);
+        shipRigidBody.AddForce(ShipTransform.forward* horizontalValue.y *Time.deltaTime*MovementSpeed);
+        shipRigidBody.AddForce(ShipTransform.right* horizontalValue.x * Time.deltaTime*MovementSpeed);
 
         }
         //reduce veolcity when to holding stick        
@@ -55,34 +55,10 @@ public class ShipMovement : MonoBehaviour
     }
     void UpdateRotation(Vector2 rotationValue){
         
-        shipRigidBody.AddRelativeTorque(new Vector3 (0,rotationValue.x,-rotationValue.y)*Time.deltaTime*rotationSpeed);
+        shipRigidBody.AddRelativeTorque(new Vector3 (-rotationValue.y,rotationValue.x,0)*Time.deltaTime*rotationSpeed);
         shipRigidBody.angularVelocity = shipRigidBody.angularVelocity/1.02F;
         
         
     }
-    void RotationByHand(){
-        float activateRotationByHand = activateRotationByHandRef.action.ReadValue<float>();
-        // Si le grip est pressé
-        if (activateRotationByHand == 1){
-            Quaternion rotationByHandValue =RotationByHandref.action.ReadValue<Quaternion>();
-            if (rotationByHandGate){
-                rotationByHandGate=false;
-                baseHandRotationOnActivation = rotationByHandValue;
-            }
-            rotationByHandValue =rotationByHandValue * Quaternion.Inverse(baseHandRotationOnActivation);
-            shipRigidBody.AddRelativeTorque(rotationByHandValue.eulerAngles*Time.deltaTime*rotationSpeed);
-            // shipRigidBody.AddRelativeTorque(rotationByHandValue/10*Time.deltaTime);
-            
-            Debug.Log(" Hand Rotation : "+ rotationByHandValue.ToString());
-
-
-
-        }
-
-        else{
-            rotationByHandGate=true;
-            
-        }
-        shipRigidBody.angularVelocity = shipRigidBody.angularVelocity/1.02F;
-    }
+    
 }
