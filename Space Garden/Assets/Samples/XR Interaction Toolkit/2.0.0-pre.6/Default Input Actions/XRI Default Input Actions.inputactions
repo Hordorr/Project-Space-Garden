@@ -1172,6 +1172,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "LeftHandShot",
+                    "type": "Button",
+                    "id": "c8b74724-0b9d-468d-80ad-8dd2016daf89",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightHandShot",
+                    "type": "Button",
+                    "id": "b25835b6-f1fa-452a-85c3-0111dd4ce703",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1260,6 +1278,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "RightHandRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ef58d0de-eef4-4579-b773-5d1932d8944a",
+                    "path": "<XRController>{LeftHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftHandShot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9b47bb4a-9b25-4589-8ac0-6fa67d2b7244",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightHandShot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

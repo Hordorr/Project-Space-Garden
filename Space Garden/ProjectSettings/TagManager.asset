@@ -3,12 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - EnemyShip
+  - Projectile
+  - PlayerShip
+  - BreakablePart
+  - LeftHand
+  - RightHand
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - IgnorePlayerRaycast
   - Water
   - UI
   - 

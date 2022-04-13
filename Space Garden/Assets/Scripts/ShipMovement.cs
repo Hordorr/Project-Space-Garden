@@ -15,6 +15,7 @@ public class ShipMovement : MonoBehaviour
     public InputActionReference Rotationref=null;
     
     
+    
     private Transform ShipTransform=null;
     private Rigidbody shipRigidBody=null;
     private Quaternion baseHandRotationOnActivation;
@@ -27,7 +28,7 @@ public class ShipMovement : MonoBehaviour
     // Update is called once per frame
     void Update(){
         
-        
+    
         Vector2 MovementPlaneValue = MovementPlaneRef.action.ReadValue<Vector2>();        
         Vector2 RotationValue= Rotationref.action.ReadValue<Vector2>();
 
@@ -37,6 +38,7 @@ public class ShipMovement : MonoBehaviour
 
         UpdateLocation(MovementPlaneValue, horizontaleMoveValue);
         UpdateRotation(RotationValue);
+        
         
         //Debug.Log("Movement Value = "+MovementPlaneValue.ToString()+" RotationValue = "+RotationValue.ToString()+" MoveUp Value = "+MoveUpValue.ToString()+" MoveDown Value = "+MoveDownValue.ToString());
 
@@ -60,5 +62,7 @@ public class ShipMovement : MonoBehaviour
         
         
     }
+
+    
     
 }
