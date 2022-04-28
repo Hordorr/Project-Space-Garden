@@ -7,6 +7,7 @@ public class BreakablePartScript : MonoBehaviour
     // Start is called before the first frame update
     public int HP;
     bool isDead=false;
+    public bool isRessource = true;
     Material material;
     void Start()
     {
@@ -21,6 +22,7 @@ public class BreakablePartScript : MonoBehaviour
     }
     public void Hit(int Damages, GameObject Initiator){
         if (!isDead){
+            if (isRessource){GetComponent<DropMatScript>().DropMat();}
             HP-= Damages;
         }
         if (HP<=0){
@@ -28,6 +30,7 @@ public class BreakablePartScript : MonoBehaviour
             Debug.Log("Le "+ this.gameObject.name + " a été détruit par "+ Initiator.name);
             material.SetColor("_EmisionColor",Color.black);
             Destroy(this.gameObject);
+            
 
         }
 

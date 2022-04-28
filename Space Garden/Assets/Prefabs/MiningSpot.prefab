@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3023867436329605497}
   - component: {fileID: 6841636608767765427}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: RessourceSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,7 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a22827868277684fbaef0a625a6ad3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
+  HP: 30
+  isRessource: 1
 --- !u!114 &8555024144965602221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae702aa9979f94b45b310bb77f2d2509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ressource: {fileID: 763035183956270315, guid: ace2d6ccb1a9dab4d824a4cd5b832478, type: 3}
 --- !u!1 &9089004673491617203
 GameObject:
   m_ObjectHideFlags: 0

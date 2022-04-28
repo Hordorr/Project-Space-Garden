@@ -34,7 +34,7 @@ public class ProjectileScript : MonoBehaviour
         
         if (other.gameObject.CompareTag("BreakablePart")){
             other.gameObject.GetComponent<BreakablePartScript>().Hit(Damages, Initiator);
-
+            
         }
         Destroy(this.gameObject);
     }

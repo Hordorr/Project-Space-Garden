@@ -5,9 +5,11 @@ using UnityEngine;
 public class DropMatScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    GameObject reccource = null;
+    public GameObject ressource = null;
+    private GameObject RessourceSpawnPointPos;
     void Start()
     {
+        RessourceSpawnPointPos = transform.GetChild (1).gameObject;
         
     }
 
@@ -16,8 +18,10 @@ public class DropMatScript : MonoBehaviour
     {
         
     }
-    void OnDestroy() {
-        Debug.Log("Destroyed");
-    
+    public void DropMat(){
+        GameObject ressourceInstance = Instantiate(ressource, RessourceSpawnPointPos.transform.position, RessourceSpawnPointPos.transform.rotation);
+        ressourceInstance.GetComponent<Rigidbody>().AddForce(ressourceInstance.transform.up + new Vector3(Random.Range(-1f,1f),Random.Range(-1f,1f),Random.Range(-1f,1f)) *50);
     }
+    
+    
 }
